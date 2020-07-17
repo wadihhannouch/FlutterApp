@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:template_flutter_app/Activities/Model/User.dart';
 import 'RegisterStep2.dart';
 
-
-
-class RegisterStep1 extends StatelessWidget {
+class RegisterStep4 extends StatefulWidget {
+  RegisterStep4({Key key, @required this.user}) : super(key: key);
   final User user;
-  final _formKey = new GlobalKey<FormState>();
 
-  RegisterStep1({Key key, @required this.user}) : super(key: key);
+  @override
+  _RegisterStep4State createState() => _RegisterStep4State();
+}
+
+class _RegisterStep4State extends State<RegisterStep4> {
+  final _formKey = new GlobalKey<FormState>();
 
   Widget _showLogo() {
     return new Hero(
@@ -29,14 +32,14 @@ class RegisterStep1 extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
-//        keyboardType: TextInputType.t,
+        keyboardType: TextInputType.emailAddress,
         autofocus: false,
         decoration: new InputDecoration(
-          hintText: "User Name",
+          hintText: "Password",
           icon: new Icon(Icons.person, color: Colors.grey),
         ),
-        validator: (value) => value.isEmpty ? 'Username can\'t be empty' : null,
-        onSaved: (value) => user.username = value.trim(),
+        validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+        onSaved: (value) => widget.user.username = value.trim(),
       ),
     );
   }
@@ -46,13 +49,14 @@ class RegisterStep1 extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
+        keyboardType: TextInputType.emailAddress,
         autofocus: false,
         decoration: new InputDecoration(
-          hintText: "First Name",
+          hintText: "Email",
           icon: new Icon(Icons.person, color: Colors.grey),
         ),
         validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
-        onSaved: (value) => user.firstName = value.trim(),
+        onSaved: (value) => widget.user.firstName = value.trim(),
       ),
     );
   }
@@ -62,13 +66,14 @@ class RegisterStep1 extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
+        keyboardType: TextInputType.emailAddress,
         autofocus: false,
         decoration: new InputDecoration(
-          hintText: "Last Name",
+          hintText: "Email",
           icon: new Icon(Icons.person, color: Colors.grey),
         ),
         validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
-        onSaved: (value) => user.lastName = value.trim(),
+        onSaved: (value) => widget.user.lastName = value.trim(),
       ),
     );
   }
@@ -86,54 +91,15 @@ class RegisterStep1 extends StatelessWidget {
             child: new Text('Next',
                 style: new TextStyle(fontSize: 20.0, color: Colors.white)),
             onPressed: (){
-              if(validateAndSave())
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => RegisterStep2(user: user)),
-                  );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => RegisterStep4(user: widget.user)),
+              );
             },
           ),
         ));
   }
-  bool validateAndSave() {
-    final form = _formKey.currentState;
-    if (form.validate()) {
-      form.save();
-      return true;
-    }
-    return false;
-  }
 
-  Widget _loginAccountLabel(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.of(context).pop();
-      },
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 20),
-        padding: EdgeInsets.all(15),
-        alignment: Alignment.bottomCenter,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Already have an account ?',
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text('Login',
-              style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   Widget _fieldsWidget() {
     return Column(
@@ -156,7 +122,6 @@ class RegisterStep1 extends StatelessWidget {
               _showLogo(),
               _fieldsWidget(),
               _submitButton(context),
-              _loginAccountLabel(context),
             ],
           ),
         ));
