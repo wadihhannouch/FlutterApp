@@ -9,6 +9,7 @@ enum AuthStatus {
   NOT_DETERMINED,
   NOT_LOGGED_IN,
   LOGGED_IN,
+  REGISTERED
 }
 
 class RootPage extends StatefulWidget {
@@ -38,17 +39,6 @@ class _RootPageState extends State<RootPage> {
     });
   }
 
-  void googleLoginCallback() {
-    widget.auth.getCurrentUser().then((user) {
-      setState(() {
-        isGoogleSignIn = true;
-        _userId = user.uid.toString();
-      });
-    });
-    setState(() {
-      authStatus = AuthStatus.LOGGED_IN;
-    });
-  }
 
   void loginCallback() {
 
@@ -59,6 +49,18 @@ class _RootPageState extends State<RootPage> {
     });
     setState(() {
       authStatus = AuthStatus.LOGGED_IN;
+    });
+  }
+
+  void registrationCallback() {
+
+    widget.auth.getCurrentUser().then((user) {
+      setState(() {
+        _userId = user.uid.toString();
+      });
+    });
+    setState(() {
+      authStatus = AuthStatus.REGISTERED;
     });
   }
 
@@ -96,29 +98,17 @@ class _RootPageState extends State<RootPage> {
         return buildWaitingScreen();
         break;
       case AuthStatus.NOT_LOGGED_IN:
-        if(isGoogleSignIn){
-          return new LoginSignupPage(
-            auth: widget.auth,
-            loginCallback: googleLoginCallback,
-          );
-        }
-        else {
           return new LoginSignupPage(
             auth: widget.auth,
             loginCallback: loginCallback,
+            registrationCallback : registrationCallback
           );
-        }
+        break;
+      case AuthStatus.REGISTERED:
+        print("user is registerd");
+
         break;
       case AuthStatus.LOGGED_IN:
-        if(isGoogleSignIn){
-          return new HomePage(
-            userId: _userId,
-            auth: widget.auth,
-            logoutCallback: googleLogoutCallback,
-            isGoogleSignin: true,
-          );
-        }
-
         if (_userId.length > 0 && _userId != null) {
           return new HomePage(
             userId: _userId,

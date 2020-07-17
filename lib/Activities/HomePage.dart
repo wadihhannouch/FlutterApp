@@ -34,9 +34,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-
     _checkEmailVerification();
-
     _todoList = new List();
     _todoQuery = _database
         .reference()

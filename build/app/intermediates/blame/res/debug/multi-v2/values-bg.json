@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/wadihhannouch/Desktop/FlutterApps/TemplateApp/template_flutter_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml",
+            "outputFile": "/Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml",
             "map": [
                 {
                     "source": "/Users/wadihhannouch/.gradle/caches/transforms-2/files-2.1/149f37ee7366bf51bd243ec7d9075803/jetified-play-services-base-16.0.1/res/values-bg/values.xml",

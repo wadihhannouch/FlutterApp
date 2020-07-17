@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'Auth/authentication.dart';
+import 'SignupSteps/SignUpPage.dart';
 
 class LoginSignupPage extends StatefulWidget {
 
   final BaseAuth auth;
-
-  LoginSignupPage({this.auth, this.loginCallback});
-
   final VoidCallback loginCallback;
+  final VoidCallback registrationCallback;
+
+  LoginSignupPage({this.auth, this.loginCallback, this.registrationCallback});
+
 
   @override
   State<StatefulWidget> createState() => new _LoginSignupPageState();
@@ -23,6 +25,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
   bool _isLoginForm;
   bool _isGoogleSignin = false;
   bool _isLoading;
+
+
 
   // Check if form is valid before perform login or signup
   bool validateAndSave() {
@@ -81,8 +85,6 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     if (userId.length > 0 && userId != null && _isLoginForm) {
       widget.loginCallback();
     }
-
-
   }
 
   @override
@@ -202,8 +204,8 @@ Widget _showForm() {
             showEmailInput(),
             showPasswordInput(),
             showPrimaryButton(),
-            showSecondaryButton(),
             showGoogleLogin(),
+            showSecondaryButton(),
             showErrorMessage(),
           ],
         ),
@@ -285,7 +287,13 @@ Widget showSecondaryButton() {
       child: new Text(
           _isLoginForm ? 'Create an account' : 'Have an account? Sign in',
           style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-    onPressed: (){},
+    onPressed: (){
+
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) =>
+                SignUpPage(auth: widget.auth,
+          registrationCallback: widget.registrationCallback,)));
+    },
     //      toggleFormMode);
   );
 
