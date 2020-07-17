@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">906024926432-snhjq5c4a7khojjdkbr95pciur99ieek.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://flutterloginapp-e4a3b.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">906024926432</string>
+    <string name="google_api_key" translatable="false">AIzaSyBV_cHWlbN5wQk-9Rp0HCDtOM6ToZMxOgs</string>
+    <string name="google_app_id" translatable="false">1:906024926432:android:9e8f3bc0867eda00c8e485</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBV_cHWlbN5wQk-9Rp0HCDtOM6ToZMxOgs</string>
+    <string name="google_storage_bucket" translatable="false">flutterloginapp-e4a3b.appspot.com</string>
+    <string name="project_id" translatable="false">flutterloginapp-e4a3b</string>
+</resources>
