@@ -1,4 +1,4 @@
-#Fri Jul 17 15:38:52 EEST 2020
+#Fri Jul 17 17:30:34 EEST 2020
 base.0=/Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

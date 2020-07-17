@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:template_flutter_app/Activities/SignUpPages/RegisterStep1.dart';
 import 'Auth/authentication.dart';
+import 'Model/User.dart';
 import 'SignupSteps/SignUpPage.dart';
 
 class LoginSignupPage extends StatefulWidget {
@@ -282,6 +284,7 @@ Widget showPasswordInput() {
 }
 
 Widget showSecondaryButton() {
+    User user = new User(null,null,null,null,null, null, null, null, null);
   return new FlatButton(
 
       child: new Text(
@@ -291,12 +294,13 @@ Widget showSecondaryButton() {
 
         Navigator.push(context,
             MaterialPageRoute(builder: (context) =>
-                SignUpPage(auth: widget.auth,
-          registrationCallback: widget.registrationCallback,)));
+//                SignUpPage(auth: widget.auth, registrationCallback: widget.registrationCallback,)
+            RegisterStep1(user: user)
+
+            ));
     },
     //      toggleFormMode);
   );
-
 }
 
 Widget showPrimaryButton() {

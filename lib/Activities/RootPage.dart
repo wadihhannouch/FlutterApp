@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:template_flutter_app/Activities/HomePage.dart';
+import 'package:template_flutter_app/Activities/SignupSteps/SignUpPage.dart';
+import 'package:template_flutter_app/Activities/SignupSteps/SignUpPage1.dart';
 
 import 'Auth/authentication.dart';
 import 'loginPage.dart';
@@ -106,7 +108,9 @@ class _RootPageState extends State<RootPage> {
         break;
       case AuthStatus.REGISTERED:
         print("user is registerd");
-
+        return new SignUpPage1(auth: widget.auth,
+            registrationCallback : registrationCallback
+        );
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {

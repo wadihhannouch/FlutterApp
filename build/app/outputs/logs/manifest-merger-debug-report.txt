@@ -11,6 +11,7 @@ MERGED from [:firebase_core] /Users/wadihhannouch/Desktop/FlutterApps/Template_A
 MERGED from [:firebase_core_web] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/firebase_core_web/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:google_sign_in] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_country_picker] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/flutter_country_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-core:17.4.4] /Users/wadihhannouch/.gradle/caches/transforms-2/files-2.1/3fc1da2d18bd0c0994905caaeb74109a/firebase-core-17.4.4/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-analytics:17.4.4] /Users/wadihhannouch/.gradle/caches/transforms-2/files-2.1/db843251e28119608dd132783d3a16c7/firebase-analytics-17.4.4/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement:17.4.4] /Users/wadihhannouch/.gradle/caches/transforms-2/files-2.1/7eb6a07f8fd28e1a4bae00238782896c/play-services-measurement-17.4.4/AndroidManifest.xml:17:1-46:12
@@ -187,6 +188,8 @@ MERGED from [:path_provider] /Users/wadihhannouch/Desktop/FlutterApps/Template_A
 MERGED from [:path_provider] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_country_picker] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/flutter_country_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_country_picker] /Users/wadihhannouch/Desktop/FlutterApps/Template_Aapp/build/flutter_country_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:17.4.4] /Users/wadihhannouch/.gradle/caches/transforms-2/files-2.1/3fc1da2d18bd0c0994905caaeb74109a/firebase-core-17.4.4/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:17.4.4] /Users/wadihhannouch/.gradle/caches/transforms-2/files-2.1/3fc1da2d18bd0c0994905caaeb74109a/firebase-core-17.4.4/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:17.4.4] /Users/wadihhannouch/.gradle/caches/transforms-2/files-2.1/db843251e28119608dd132783d3a16c7/firebase-analytics-17.4.4/AndroidManifest.xml:5:5-44

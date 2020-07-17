@@ -1,28 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_country_picker/flutter_country_picker.dart';
 import '../Auth/authentication.dart';
 import '../Widget/bezierContainer.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class SignUpPage extends StatefulWidget {
-  SignUpPage({this.auth, this.loginCallback, this.title});
+class SignUpPage1 extends StatefulWidget {
+  SignUpPage1({this.auth, this.registrationCallback});
 
   final BaseAuth auth;
 
-  final VoidCallback loginCallback;
+  final VoidCallback registrationCallback;
 
-  final String title;
+
 
   @override
-  _SignUpPageState createState() => _SignUpPageState();
+  _SignUpPageState1 createState() => _SignUpPageState1();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
-  String _email;
+class _SignUpPageState1 extends State<SignUpPage1> {
+  Country _selected;
   String _password;
+  String _email;
   String _username;
   bool _isLoading = false;
   final _formKey = new GlobalKey<FormState>();
+
+  Widget _countryPicker(){
+    return new CountryPicker(
+      dense: false,
+      showFlag: true,  //displays flag, true by default
+      showDialingCode: true, //displays dialing code, false by default
+      showName: true, //displays country name, true by default
+      showCurrency: false, //eg. 'British pound'
+      showCurrencyISO: true, //eg. 'GBP'
+      onChanged: (Country country) {
+        setState(() {
+          _selected = country ;
+        });
+      },
+      selectedCountry: _selected,
+    );
+  }
 
   Widget _backButton(BuildContext context) {
     return InkWell(
@@ -108,7 +127,7 @@ class _SignUpPageState extends State<SignUpPage> {
             color: Colors.blue,
             child: new Text('Sign up',
                 style: new TextStyle(fontSize: 20.0, color: Colors.white)),
-            onPressed: validateAndSubmit,
+            onPressed: (){},//validateAndSubmit,
           ),
         ));
   }
@@ -163,8 +182,8 @@ class _SignUpPageState extends State<SignUpPage> {
     return Column(
       children: <Widget>[
         _userNameField(),
-        _emailField(),
-        _passwordField(),
+        _countryPicker(),
+//        _passwordField(),
       ],
     );
   }
@@ -232,7 +251,7 @@ class _SignUpPageState extends State<SignUpPage> {
       _isLoading = false;
     });
     if (userId.length > 0 && userId != null) {
-      widget.loginCallback();
+      widget.registrationCallback();
     }
   }
 
